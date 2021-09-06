@@ -600,7 +600,7 @@ end)
 
 RegisterNetEvent('BobInteractSound_CL:PlayWithinDistance')
 AddEventHandler('BobInteractSound_CL:PlayWithinDistance', function(playerNetId, maxDistance, soundFile, soundVolume)
-    local lCoords = GetEntityCoords(GetPlayerPed(-1))
+    local lCoords = GetEntityCoords(PlayerPedId())
     local eCoords = GetEntityCoords(GetPlayerPed(GetPlayerFromServerId(playerNetId)))
     local distIs  = Vdist(lCoords.x, lCoords.y, lCoords.z, eCoords.x, eCoords.y, eCoords.z)
     if(distIs <= maxDistance) then
